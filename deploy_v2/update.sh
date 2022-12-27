@@ -5,8 +5,8 @@ set -e
 PROJECT_BASE_PATH='/usr/local/apps/profiles-rest-api/profiles-rest-api'
 
 git pull
-$PROJECT_BASE_PATH/python3 manage.py migrate
-$PROJECT_BASE_PATH/python3 manage.py collectstatic --noinput
+$PROJECT_BASE_PATH manage.py migrate
+$PROJECT_BASE_PATH manage.py collectstatic --noinput
 supervisorctl restart profiles_api
 
 echo "DONE! :)"
